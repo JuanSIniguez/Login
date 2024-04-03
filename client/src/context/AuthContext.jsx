@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
 			setUser(res.data);
 			setIsAuthenticated(true);
 		} catch (error) {
-			setRegisterError(error.response.data);
+			setRegisterError(error.response.data.message);
 			console.log(error);
 		}
 	};
@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }) => {
 			setIsAuthenticated(false);
 			Cookies.remove('token');
 		} catch (error) {
-			setRegisterError(error.response.data);
+			setRegisterError(error.response.data.message);
 			console.log(error);
 		}
 	};

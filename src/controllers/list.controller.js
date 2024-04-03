@@ -19,7 +19,6 @@ export const createTaskList = async (req, res) => {
 export const getTasksLists = async (req, res) => {
 	try {
 		const lists = await List.find({ user: req.user.id }).populate('user');
-		console.log(res);
 		res.json(lists);
 	} catch (error) {
 		console.log(error);
